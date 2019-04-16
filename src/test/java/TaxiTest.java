@@ -14,7 +14,10 @@ public class TaxiTest {
     void should_add_0_8_when_distance_between_2_to_8() {
         verifyTaxtCalculation(3.0, 6.8);
         verifyTaxtCalculation(8.0, 10.8);
+
+        verifyTaxtCalculation(2.5, 6.4);
     }
+
 
     private void verifyTaxtCalculation(Double distance, Double expectAmount) {
         //given
