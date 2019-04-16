@@ -10,6 +10,12 @@ public class TaxiTest {
         verifyTaxtCalculation(2.0, 6.0);
     }
 
+    @Test
+    void should_add_0_8_when_distance_between_2_to_8() {
+        verifyTaxtCalculation(3.0, 6.8);
+        verifyTaxtCalculation(8.0, 10.8);
+    }
+
     private void verifyTaxtCalculation(Double distance, Double expectAmount) {
         //given
         Taxi taxi = new Taxi();
