@@ -5,14 +5,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TaxiTest {
 
     @Test
-    public void should_return_6_when_less_then_2KM() {
+    void should_return_6_when_less_then_2KM() {
+        verifyTaxtCalculation(1.0, 6.0);
+        verifyTaxtCalculation(2.0, 6.0);
+    }
+
+    private void verifyTaxtCalculation(Double distance, Double expectAmount) {
         //given
         Taxi taxi = new Taxi();
         //when
-        Double amoutFor1 = taxi.calculate(1.0);
-        Double amoutFor2 = taxi.calculate(2.0);
+        Double amout = taxi.calculate(distance);
         //then
-        assertEquals(6.0, amoutFor1);
-        assertEquals(6.0, amoutFor2);
+        assertEquals(expectAmount, amout);
     }
+
+
 }
