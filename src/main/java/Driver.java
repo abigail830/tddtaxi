@@ -7,7 +7,7 @@ public class Driver {
         this.taxi = taxi;
     }
 
-    public Double charge(double distance, int waitMin) {
-        return taxi.calculate(distance) + waitMin * WAIT_FEE;
+    public double charge(double distance, int waitMin) {
+        return Math.round(taxi.calculate(distance) + waitMin * WAIT_FEE);
     }
 }
