@@ -18,6 +18,11 @@ public class TaxiTest {
         verifyTaxtCalculation(2.5, 6.4);
     }
 
+    @Test
+    void should_add_50_peasant_fee_when_distance_more_than_8() {
+        verifyTaxtCalculation(9.0, 12.0);
+    }
+
 
     private void verifyTaxtCalculation(Double distance, Double expectAmount) {
         //given
@@ -25,7 +30,7 @@ public class TaxiTest {
         //when
         Double amout = taxi.calculate(distance);
         //then
-        assertEquals(expectAmount, amout);
+        assertEquals(expectAmount, amout, 0.001);
     }
 
 

@@ -9,8 +9,10 @@ public class Taxi {
             return BASE_COST;
         } else if (distance <= 8) {
             return BASE_COST + (distance - BASE_DISTANCE) * 0.8;
+        } else {
+            return BASE_COST + (distance - BASE_DISTANCE) * 0.8 + (distance - 8.0) * 0.8 * 0.5;
         }
 
-        return 0.0;
+//        return 0.0;
     }
 }
